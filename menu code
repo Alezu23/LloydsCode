@@ -2,7 +2,13 @@ import vlchttp
 import pafy
 import youtube_dl
 
-
+def dataValINT():
+    global xInt
+    while True:
+        xInt = input()
+        if xInt.isnumeric():
+            break
+        else:
 
 def menu():
     print("""                                                                   
@@ -21,7 +27,9 @@ def menu():
     print("[3] Output Data")
     print("[4] Exit")
     print("Please enter a number and press enter:")
-    ans1 = input()
+    dataValINT()
+    ans1 = xInt
+    ans1 = int(ans1)
     if ans1 == "1":
         videos()
         menu()
