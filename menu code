@@ -1,0 +1,49 @@
+import vlchttp
+import pafy
+import youtube_dl
+
+
+
+def menu():
+    print("""                                                                   
+88           88                                     88             
+88           88                                     88             
+88           88                                     88             
+88           88   ,adPPYba,   8b       d8   ,adPPYb,88  ,adPPYba,  
+88           88  a8"     "8a  `8b     d8'  a8"    `Y88  I8[    ""  
+88           88  8b       d8   `8b   d8'   8b       88   `"Y8ba,   
+88           88  "8a,   ,a8"    `8b,d8'    "8a,   ,d88  aa    ]8I  
+88888888888  88   `"YbbdP"'       Y88'      `"8bbdP"Y8  `"YbbdP"'  
+                                  d8'                              
+                                 d8'                          """)
+    print("[1] Show Videos")
+    print("[2] Input Data")
+    print("[3] Output Data")
+    print("[4] Exit")
+    print("Please enter a number and press enter:")
+    ans1 = input()
+    if ans1 == "1":
+        videos()
+        menu()
+    elif ans1 == "2":
+        #input_data()
+        menu()
+    elif ans1 == "3":
+        #output_data()
+        menu()
+    elif ans1 == "4":
+        exit()
+    else:
+        print("---INCORRECT INPUT---")
+        input("Press enter to continue...")
+        menu()
+def videos():
+
+
+
+    url = "https://www.youtube.com/watch?v=C0DPdy98e4c"
+    video = pafy.new(url)
+    best = video.getbest()
+    media = vlchttp.MediaPlayer(best.url)
+    media.play()
+menu()
