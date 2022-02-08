@@ -9,6 +9,7 @@ def dataValINT():
         if xInt.isnumeric():
             break
         else:
+            print('NUMBERS ONLY PLEASE')
 
 def menu():
     print("""                                                                   
